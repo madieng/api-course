@@ -58,13 +58,13 @@ class Customer
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Invoice", mappedBy="customer")
      * @Groups({"customers_read"})
-     * @Assert\NotBlank(message="L'utilisateur est obligatoire.")
      */
     private $invoices;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="customers")
      * @Groups({"customers_read", "invoices_read"})
+     * @Assert\NotBlank(message="L'utilisateur est obligatoire.")
      */
     private $user;
 
